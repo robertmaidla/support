@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TicketService } from 'src/app/services/ticket.service';
 import { Ticket } from 'src/app/models/Ticket';
 
 @Component({
@@ -10,29 +11,24 @@ import { Ticket } from 'src/app/models/Ticket';
 export class ActiveTicketsComponent implements OnInit {
   activeTickets:Ticket[];
 
-  constructor() { }
+  constructor(private ticketService:TicketService) { }
 
   ngOnInit() {
-    this.activeTickets = [
-      {
-        id:1,
-        createdAt: new Date(),
-        query: "Ticket 1",
-        deadline: new Date()
-      },
-      {
-        id:2,
-        createdAt: new Date(),
-        query: "Ticket 2",
-        deadline: new Date()
-      },
-      {
-        id:3,
-        createdAt: new Date(),
-        query: "Ticket 3",
-        deadline: new Date()
-      }
-    ]
+    this.activeTickets = this.ticketService.getTickets();
+  }
+
+  deleteTicket(ticket:Ticket):void {
+    // Remove ticket from server
+    this.ticketService.deleteTicket(ticket);
+    // Reload UI
+    this.activeTickets = this.ticketService.getTickets();
+  }
+
+  addTicket(newTicket:Ticket):void {
+    // Add to server
+    this.ticketService.addTicket(newTicket);
+    // Reload UI
+    this.activeTickets = this.ticketService.getTickets();
   }
 
 }

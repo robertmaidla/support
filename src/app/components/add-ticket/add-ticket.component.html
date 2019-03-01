@@ -1,0 +1,6 @@
+<form (ngSubmit)="onSubmit()">
+  <input type="text" name="query" [(ngModel)]="query" placeholder="Support query...">
+  <p>Deadline</p>
+  <input type="datetime-local" name="deadline" [(ngModel)]="deadline">
+  <input type="submit" value="Submit">
+</form>

@@ -1,7 +1,9 @@
 <div>
   <p>
-    <input type="checkbox">
+    <input (change)="onToggle(ticket)" type="checkbox" [checked]="ticket.handled">
+    {{ticket.createdAt}}
     {{ticket.query}}
-    <button>Close</button>
+    {{ticket.deadline}}
+    <button (click)="onDelete(ticket)">Close</button>
   </p>
 </div>

@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ActiveTicketsComponent } from './components/active-tickets/active-tickets.component';
 import { TicketItemComponent } from './components/ticket-item/ticket-item.component';
 import { TestComponent } from './components/test/test.component';
+import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ActiveTicketsComponent,
     TicketItemComponent,
-    TestComponent
+    TestComponent,
+    AddTicketComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
