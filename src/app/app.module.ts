@@ -7,7 +7,9 @@ import { ActiveTicketsComponent } from './components/active-tickets/active-ticke
 import { TicketItemComponent } from './components/ticket-item/ticket-item.component';
 import { TestComponent } from './components/test/test.component';
 import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { AboutComponent } from './components/pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { FormsModule } from '@angular/forms';
     ActiveTicketsComponent,
     TicketItemComponent,
     TestComponent,
-    AddTicketComponent
+    AddTicketComponent,
+    HeaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

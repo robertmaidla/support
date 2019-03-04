@@ -14,21 +14,27 @@ export class ActiveTicketsComponent implements OnInit {
   constructor(private ticketService:TicketService) { }
 
   ngOnInit() {
-    this.activeTickets = this.ticketService.getTickets();
+    this.reloadUI();
+  }
+
+  reloadUI() {
+    this.activeTickets = this.ticketService.getTickets().sort((a, b) => {
+      return Number(a.deadline) - Number(b.deadline);
+    });
   }
 
   deleteTicket(ticket:Ticket):void {
     // Remove ticket from server
     this.ticketService.deleteTicket(ticket);
     // Reload UI
-    this.activeTickets = this.ticketService.getTickets();
+    this.reloadUI();
   }
 
   addTicket(newTicket:Ticket):void {
     // Add to server
     this.ticketService.addTicket(newTicket);
     // Reload UI
-    this.activeTickets = this.ticketService.getTickets();
+    this.reloadUI();
   }
 
 }

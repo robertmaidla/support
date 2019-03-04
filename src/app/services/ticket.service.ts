@@ -41,6 +41,20 @@ export class TicketService {
   }
 
   addTicket(ticket:Ticket):void {
+    // Generate unique id (this would be handled automatically by db)
+    this.generateUniqueId(ticket);
+    
     this.mockData.push(ticket);
+  }
+
+  generateUniqueId(ticket:Ticket):void {
+    let newIdFound = false;
+    while (!newIdFound) {
+      if (this.mockData.find(t => t.id === ticket.id)) {
+        ticket.id = Math.floor(Math.random() * 100);
+      } else {
+        newIdFound = true;
+      }
+    }
   }
 }

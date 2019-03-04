@@ -7,25 +7,28 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class AddTicketComponent implements OnInit {
   @Output() addTicket: EventEmitter<any> = new EventEmitter();
-  
+
   query:string;
   deadline:Date;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  onSubmit() {
-    const newTicket = {
-      id: 1,
-      createdAt: new Date(),
-      query: this.query,
-      handled: false,
-      deadline: this.deadline
+  onSubmit():void {
+    // Validate form inputs
+    if (!this.query || !this.deadline) {
+      console.log("invalid");
+    } else {
+      const newTicket = {
+        id: 1,
+        createdAt: new Date(),
+        query: this.query,
+        handled: false,
+        deadline: new Date(this.deadline)
+      }
+  
+      this.addTicket.emit(newTicket);
     }
-
-    this.addTicket.emit(newTicket);
   }
-
 }
