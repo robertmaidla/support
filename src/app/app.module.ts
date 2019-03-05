@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActiveTicketsComponent } from './components/active-tickets/active-tickets.component';
 import { TicketItemComponent } from './components/ticket-item/ticket-item.component';
-import { TestComponent } from './components/test/test.component';
 import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/layout/header/header.component';
@@ -17,7 +16,6 @@ import { FooterComponent } from './components/layout/footer/footer.component';
     AppComponent,
     ActiveTicketsComponent,
     TicketItemComponent,
-    TestComponent,
     AddTicketComponent,
     HeaderComponent,
     AboutComponent,
