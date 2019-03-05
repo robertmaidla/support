@@ -1,0 +1,43 @@
+.form {
+    text-align: center;
+    padding: 10px;
+}
+
+.query-input {
+    width: 60%;
+    height: 5em;
+}
+
+.submit {
+    background: #305F72;
+    color: rgb(221, 220, 220);
+    border: none;
+    padding: 5px 9px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+    margin-top: 10px;
+
+}
+
+.submit:focus {
+    outline: 0;
+}
+
+.submit:hover {
+    background: #568EA6;
+}
+
+.error {
+    font-size: .9em;
+    color: #F18C8E;
+}
+
+.error-input {
+    border: 2px #F18C8E solid; 
+}
+
+.success {
+    font-size: .9em;
+    color: black;
+}

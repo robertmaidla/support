@@ -16,6 +16,16 @@ export class TicketItemComponent implements OnInit {
 
   ngOnInit() { }
 
+  // Dynamic classes
+  setClasses() {
+    return {
+      'container': true,
+      'ticket-class': true,
+      'is-handled': this.ticket.handled,
+      'critical': this.ticket.critical
+    }
+  }
+
   onDelete(ticket:Ticket):void {
     this.deleteTicket.emit(ticket);
   }
@@ -24,5 +34,9 @@ export class TicketItemComponent implements OnInit {
     // Toggle in UI
     ticket.handled = !ticket.handled;
     // Toggle on server (not necessary without back end)
+  }
+
+  formatDate(date:Date):string {
+    return date.toLocaleString('en-GB');
   }
 }

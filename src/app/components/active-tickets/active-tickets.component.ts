@@ -15,8 +15,13 @@ export class ActiveTicketsComponent implements OnInit {
 
   ngOnInit() {
     this.reloadUI();
+
+    setInterval(() => {
+      this.isCritical()
+    }, 10000);
   }
 
+  // Load UI elements from server and sort by deadline
   reloadUI() {
     this.activeTickets = this.ticketService.getTickets().sort((a, b) => {
       return Number(a.deadline) - Number(b.deadline);
@@ -35,6 +40,15 @@ export class ActiveTicketsComponent implements OnInit {
     this.ticketService.addTicket(newTicket);
     // Reload UI
     this.reloadUI();
+  }
+
+  // Toggle ticket critical status
+  isCritical():void {
+    this.activeTickets.forEach(t => {
+      if (!t.critical) {
+        t.critical = this.ticketService.isCritical(t);
+      }
+    });
   }
 
 }

@@ -1,7 +1,9 @@
-<app-add-ticket (addTicket)="addTicket($event)"></app-add-ticket>
-<app-ticket-item
-  *ngFor="let ticket of activeTickets"
-  [ticket]="ticket"
-  (deleteTicket)="deleteTicket($event)"
->
-</app-ticket-item>
+<div class="container">
+  <app-add-ticket (addTicket)="addTicket($event)"></app-add-ticket>
+  <app-ticket-item
+    *ngFor="let ticket of activeTickets"
+    [ticket]="ticket"
+    (deleteTicket)="deleteTicket($event)"
+  >
+  </app-ticket-item>
+</div>

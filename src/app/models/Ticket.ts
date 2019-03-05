@@ -4,4 +4,5 @@ export class Ticket {
     query:string;
     handled:boolean;
     deadline:Date;
+    critical:boolean;
 }

@@ -10,6 +10,7 @@ import { AddTicketComponent } from './components/add-ticket/add-ticket.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AboutComponent } from './components/pages/about/about.component';
     TestComponent,
     AddTicketComponent,
     HeaderComponent,
-    AboutComponent
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

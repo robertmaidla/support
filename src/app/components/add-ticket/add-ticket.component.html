@@ -1,9 +1,19 @@
-<div>
-  <form (ngSubmit)="onSubmit()">
-    <input type="text" name="query" [(ngModel)]="query" 
-      placeholder="Support query...">
+<div class="container">
+  <form class="form" (ngSubmit)="onSubmit()">
+    <textarea [ngClass]="setQueryClasses()" class="query-input" type="text" name="query" [(ngModel)]="query" 
+    placeholder="Type your query here..."></textarea>
+    <br>
+
+    <div *ngIf="queryError" class="error">Description required</div>
+
     <p>Deadline</p>
-    <input type="datetime-local" name="deadline" [(ngModel)]="deadline">
-    <input type="submit" value="Submit">
+    <input [ngClass]="setDeadlineClasses()" type="datetime-local" name="deadline" [(ngModel)]="deadline">
+    <br>
+
+    <div *ngIf="deadlineError" class="error">Full deadline required</div>
+
+    <input class="submit" type="submit" value="Submit">
+
+    <div *ngIf="submitSuccess" class="success">Ticket submitted</div>
   </form>
 </div>

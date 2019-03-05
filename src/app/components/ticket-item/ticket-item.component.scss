@@ -1,0 +1,52 @@
+$secondary-font-size: .9em;
+$primary-font-size: 1.3em;
+
+.ticket-class {
+    padding: 10px;
+    border-bottom: 1px #568EA6 solid;
+}
+
+.ticket-class:hover {
+    opacity: 0.95;
+}
+
+.is-handled {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.is-handled:hover {
+    opacity: 0.65;
+}
+
+.critical {
+    background: #F18C8E;
+}
+
+.query {
+    font-size: $primary-font-size;
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;      /* IE */
+}
+
+.created-at, .deadline, input, span {
+    font-size: $secondary-font-size;
+}
+
+.del {
+    background: #305F72;
+    color: rgb(221, 220, 220);
+    border: none;
+    padding: 5px 9px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.del:hover {
+    background: #568EA6;
+}
+
