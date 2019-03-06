@@ -3,8 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { TicketService } from './ticket.service';
 import { Ticket } from '../models/Ticket';
 
-// TODO: remove f
-fdescribe('TicketService', () => {
+describe('TicketService', () => {
   let service:TicketService;
 
   beforeEach(() => {

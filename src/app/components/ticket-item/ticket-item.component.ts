@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
-import { TicketService } from 'src/app/services/ticket.service';
 import { Ticket } from 'src/app/models/Ticket';
 
 @Component({
@@ -12,12 +11,14 @@ export class TicketItemComponent implements OnInit {
   @Input() ticket:Ticket;
   @Output() deleteTicket:EventEmitter<Ticket> = new EventEmitter();
 
-  constructor(private ticketService:TicketService) { }
+  stringFormat:string = 'en-GB';
+
+  constructor() { }
 
   ngOnInit() { }
 
-  // Dynamic classes
-  setClasses() {
+  // Dynamic ngClass classes
+  setClasses():any {
     return {
       'container': true,
       'ticket-class': true,
@@ -37,6 +38,6 @@ export class TicketItemComponent implements OnInit {
   }
 
   formatDate(date:Date):string {
-    return date.toLocaleString('en-GB');
+    return date.toLocaleString(this.stringFormat);
   }
 }

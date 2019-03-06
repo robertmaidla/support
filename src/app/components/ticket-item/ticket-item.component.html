@@ -1,9 +1,8 @@
 <div [ngClass]="setClasses()">
   <span>Handled: </span>
-  <input (change)="onToggle(ticket)" type="checkbox" [checked]="ticket.handled">
+  <input class="handled-input" (change)="onToggle(ticket)" type="checkbox" [checked]="ticket.handled">
   <p class="query"><b>Query:</b> "{{ticket.query}}"</p>
   <p class="created-at"><b>Created at:</b> {{formatDate(ticket.createdAt)}}</p>
   <p class="deadline"><b>Deadline:</b> {{formatDate(ticket.deadline)}}</p>
-  <p>{{counter}}</p>
   <button (click)="onDelete(ticket)" class="del">Delete</button>
 </div>
