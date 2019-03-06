@@ -1,6 +1,6 @@
 # Application description
 
-This application allows the user to create support tickets (input fields are validated). The support tickets are displayed (sorted by deadline) and can be crossed out or deleted. The tickets are stored locally. Service and TicketItemComponent have automated tests.
+This application allows the user to create support tickets (input fields are validated). The support tickets are displayed (sorted by deadline) and can be crossed out or deleted. Ticket changes background color when 1h or less to deadline. The tickets are stored locally. Service and TicketItemComponent have automated tests.
 
 # Support
 
